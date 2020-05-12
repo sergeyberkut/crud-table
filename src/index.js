@@ -1,17 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+
+import App from './components/App'
+import ErrorBoundry from './components/ErrorBoundry'
+import CrudTableService from './services'
+import { CrudTableServiceProvider } from './components/CrudTableContext'
+
+import store from './store/store'
+
+const crudTableService = new CrudTableService()
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+	<React.StrictMode>
+		<Provider store={store}>
+			<ErrorBoundry>
+				<CrudTableServiceProvider value={crudTableService}>
+					<App></App>
+				</CrudTableServiceProvider>
+			</ErrorBoundry>
+		</Provider>
+	</React.StrictMode>,
+	document.getElementById('root')
+)

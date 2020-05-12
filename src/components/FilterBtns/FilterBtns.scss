@@ -1,0 +1,24 @@
+.crud-table__filter-btns {
+	@media (max-width: 475px) {
+		text-align: center;
+		margin: 10px;
+	}
+
+	& button {
+		padding: 0 10px;
+		font-size: 15px;
+		border-radius: 2px;
+		margin-right: 5px;
+		box-sizing: border-box;
+		&.active {
+			border: 1px solid black;
+			&-always {
+				border: 1px solid black;
+			}
+		}
+
+		@media (max-width: 750px) {
+			margin-bottom: 10px;
+		}
+	}
+}

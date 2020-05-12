@@ -1,0 +1,51 @@
+.crud-table__header {
+	background: #435c7c;
+	color: #fff;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px 20px;
+	border-radius: 5px;
+
+	@media (max-width: 750px) {
+		flex-direction: column;
+	}
+}
+
+.crud-table__title {
+	font-size: 30px;
+
+	@media (max-width: 750px) {
+		font-size: 40px;
+	}
+}
+
+.crud-table__inputblock {
+	display: flex;
+	align-items: center;
+
+	@media (max-width: 750px) {
+		margin-top: 20px;
+	}
+
+	& input {
+		margin-right: 5px;
+		font-size: 16px;
+		padding: 5px;
+		border-radius: 5px;
+	}
+}
+
+.crud-table__inputblock-btn {
+	background: transparent;
+	color: #fff;
+	font-size: 25px;
+}
+
+.crud-table__inputblock-search {
+	flex: 0 1 40%;
+
+	& input {
+		width: 100%;
+	}
+}
