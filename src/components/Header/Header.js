@@ -47,7 +47,9 @@ function Header({ onTodoAdded, todosToShow, todos, onTodoSearch, searchField }) 
 		<div className="crud-table__header">
 			<h1 className="crud-table__title">Crud Table</h1>
 
-			<form className="crud-table__inputblock crud-table__inputblock-search">
+			<form className="crud-table__inputblock crud-table__inputblock-search"
+				onSubmit={event => event.preventDefault()}
+			>
 				<input type="text" placeholder="Что ищем?"
 					value={searchField}
 					onChange={event => onTodoSearch(event.target.value)}

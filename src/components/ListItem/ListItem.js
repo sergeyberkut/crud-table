@@ -123,7 +123,7 @@ export default function ListItem({
 					<li className="todo-list__list-item" key={id}>
 						<div className="todo-list__index">{++index}</div>
 						<form className="todo-list__title relative"
-							onSubmit={event => {
+							onSubmit={(event) => {
 								event.preventDefault()
 								onTodoSaveHandler(id, label)
 								setLabel('')
